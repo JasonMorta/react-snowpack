@@ -1,14 +1,22 @@
+/** @type {import("snowpack").SnowpackUserConfig } */
 export default {
   mount: {
-    public: { url: '/', static: true },
-    src: { url: '/dist' }
+    public: '/',
+    src: '/dist'
   },
   plugins: [
-     /* Enable an SPA Fallback in development: */
+    /* ... */
+  ],
+  routes: [
+    /* Enable an SPA Fallback in development: */
     // {"match": "routes", "src": ".*", "dest": "/index.html"},
     '@snowpack/plugin-react-refresh',
     '@snowpack/plugin-typescript',
   ],
+  optimize: {
+    /* Example: Bundle your final build: */
+    // "bundle": true,
+  },
   packageOptions: {
     /* ... */
   },
